@@ -15,7 +15,7 @@ RUN useradd -m -s /usr/bin/fish horta \
 	&& echo 'horta ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers \
         && localedef -i en_US -f UTF-8 en_US.UTF-8
 
-RUN apt-get install -y w3m
+RUN apt-get install -y w3m htop
 
 USER horta
 WORKDIR /home/horta
