@@ -16,6 +16,12 @@ RUN useradd -m -s /usr/bin/fish horta \
 	&& echo 'horta ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers \
         && localedef -i en_US -f UTF-8 en_US.UTF-8
 
+RUN curl -s https://api.github.com/repos/browsh-org/browsh/releases/latest \
+       | grep "browser_download_url.*deb" | grep amd64 | cut -d '"' -f 4 \
+       | wget -qi -
+RUN dpkg -i browsh*.deb
+RUN rm -rf browsh*.deb
+
 USER horta
 WORKDIR /home/horta
 ENV PATH=/home/horta/.linuxbrew/bin:/home/horta/.linuxbrew/sbin:$PATH \
