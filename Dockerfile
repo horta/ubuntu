@@ -16,6 +16,7 @@ RUN useradd -m -s /usr/bin/fish horta \
         && localedef -i en_US -f UTF-8 en_US.UTF-8
 
 RUN apt-get install -y w3m htop
+ENV TERM=xterm-256color
 
 USER horta
 WORKDIR /home/horta
