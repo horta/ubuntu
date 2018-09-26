@@ -6,7 +6,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y apt-utils
 RUN apt-get install -y cmake vim wget curl build-essential
-RUN apt-get install -y bzip2 ca-certificates mercurial git
+RUN apt-get install -y bzip2 ca-certificates mercurial git tmux
 
 RUN mkdir /run/uuidd
 RUN apt-get install -y fish ruby locales make uuid-runtime sudo
