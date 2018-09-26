@@ -10,6 +10,7 @@ RUN apt-get install -y bzip2 ca-certificates mercurial git tmux
 
 RUN mkdir /run/uuidd
 RUN apt-get install -y fish ruby locales make uuid-runtime sudo
+RUN apt-get install firefox
 RUN echo "/usr/bin/fish >> /etc/shells"
 RUN useradd -m -s /usr/bin/fish horta \
 	&& echo 'horta ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers \
