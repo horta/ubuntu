@@ -15,7 +15,8 @@ RUN useradd -m -s /usr/bin/fish horta \
 	&& echo 'horta ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers \
         && localedef -i en_US -f UTF-8 en_US.UTF-8
 
-RUN apt-get install -y w3m htop zlib1g zlib1g-dev libzstd1 libzstd1-dev
+RUN apt-get install -y w3m htop zlib1g zlib1g-dev libzstd1 libzstd1-dev \
+        npm
 ENV TERM=xterm-256color
 
 USER horta
