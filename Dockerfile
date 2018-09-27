@@ -36,4 +36,8 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.
     echo ". ~/anaconda/etc/profile.d/conda.sh" >> ~/.bashrc && \                                        
     echo "conda activate base" >> ~/.bashrc 
 
+RUN . ~/anaconda/etc/profile.d/conda.sh && \
+    conda activate base && \
+    conda update --all -y
+
 CMD [ "/usr/bin/fish" ]
